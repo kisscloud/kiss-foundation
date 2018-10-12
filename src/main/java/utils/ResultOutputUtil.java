@@ -1,7 +1,7 @@
 package utils;
 
 
-import enums.ResultOutputCodeEnum;
+import output.Code;
 import output.ResultOutput;
 
 public class ResultOutputUtil {
@@ -15,10 +15,8 @@ public class ResultOutputUtil {
     public static ResultOutput success(Object data) {
 
 
-
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(ResultOutputCodeEnum.Success.getCode());
-        resultOutput.setMessage("成功");
+        resultOutput.setCode(Code.SUCCESS);
 
         resultOutput.setData(data);
 
@@ -28,8 +26,7 @@ public class ResultOutputUtil {
     public static ResultOutput success() {
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(ResultOutputCodeEnum.Success.getCode());
-        resultOutput.setMessage("成功");
+        resultOutput.setCode(Code.SUCCESS);
 
         return resultOutput;
     }
@@ -52,8 +49,7 @@ public class ResultOutputUtil {
     public static ResultOutput validateError(Object data) {
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(ResultOutputCodeEnum.ValidateError.getCode());
-        resultOutput.setMessage("数据校验错误");
+        resultOutput.setCode(Code.VALIDATE_ERROR);
 
         resultOutput.setData(data);
 
@@ -64,8 +60,7 @@ public class ResultOutputUtil {
     public static ResultOutput lackParamsError() {
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(ResultOutputCodeEnum.ValidateError.getCode());
-        resultOutput.setMessage("缺少参数");
+        resultOutput.setCode(Code.PARAMETER_ERROR);
 
         return resultOutput;
     }
