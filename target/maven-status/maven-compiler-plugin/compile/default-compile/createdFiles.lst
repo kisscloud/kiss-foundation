@@ -1,5 +1,4 @@
-output/Code.class
+status/Message.class
 output/ResultOutput.class
-output/Message.class
-utils/CodeUtil.class
+status/Code.class
 utils/ResultOutputUtil.class

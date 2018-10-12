@@ -1,7 +1,7 @@
 package utils;
 
 
-import output.Code;
+import status.Code;
 import output.ResultOutput;
 
 public class ResultOutputUtil {

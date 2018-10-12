@@ -1,4 +1,4 @@
-package output;
+package status;
 
 public class Code {
     public static final Integer SUCCESS = 200;
