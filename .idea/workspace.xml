@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3eb5712-9517-4129-95a7-0b80795ef961" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/status/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/status/Message.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/JwtUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -47,6 +47,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#904#919#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/status/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+              <folding>
+                <element signature="e#183#210#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,6 +91,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/utils/JwtUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/ThreadLocalUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/status/Message.java" />
       </list>
     </option>
   </component>
@@ -127,8 +140,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,12 +171,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="status" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kiss-foundation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kiss-foundation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -262,6 +283,7 @@
       <workItem from="1539659841753" duration="634000" />
       <workItem from="1539759170964" duration="3638000" />
       <workItem from="1539831932547" duration="702000" />
+      <workItem from="1539914339803" duration="1034000" />
     </task>
     <task id="LOCAL-00001" summary="modify pom">
       <created>1539759253709</created>
@@ -270,14 +292,22 @@
       <option name="project" value="LOCAL" />
       <updated>1539759253709</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add jwt">
+      <created>1539914364760</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539914364760</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14157000" />
+    <option name="totallyTimeSpent" value="15191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -285,14 +315,14 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.35250267" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.35250267" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32935324" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32935324" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.26965174" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14643237" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14802982" />
       <window_info anchor="right" id="Database" order="3" weight="0.32960597" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -318,7 +348,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modify pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify pom" />
+    <MESSAGE value="add jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jwt" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -498,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/status/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/Operator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/context/GlobalContextHandler.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -514,16 +538,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ThreadLocalUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" selection-start-line="10" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ThreadLocalUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/JwtUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -531,6 +546,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#904#919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/status/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+          <folding>
+            <element signature="e#183#210#0" expanded="true" />
           </folding>
         </state>
       </provider>
