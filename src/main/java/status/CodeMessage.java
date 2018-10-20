@@ -5,15 +5,15 @@ import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 
-public class Message {
+public class CodeMessage {
 
-    private static Map<String,Map<Integer,String>> messageMap = new HashMap<String,Map<Integer,String>>();
+    private static Map<String,Map<Object,String>> messageMap = new HashMap<String,Map<Object,String>>();
 
-    public static String getMessage(String lang,Integer code) {
+    public static String getMessage(String lang,Object code) {
         return messageMap.get(lang).get(code);
     }
 
-    public Message() throws UnsupportedEncodingException {
+    public CodeMessage() throws UnsupportedEncodingException {
 
         ResourceBundle langBundle = ResourceBundle.getBundle("language");
         Enumeration<String> langKeys = langBundle.getKeys();
@@ -27,9 +27,9 @@ public class Message {
 
         for (Map.Entry<String,String> entry : langMap.entrySet()) {
             String language = entry.getValue();
-            ResourceBundle bundle = ResourceBundle.getBundle("messages/messages",new Locale(language));
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n/codes",new Locale(language));
             Enumeration<String> keys = bundle.getKeys();
-            Map<Integer,String> codeMessageMap = new HashMap<Integer,String>();
+            Map<Object,String> codeMessageMap = new HashMap<Object,String>();
             while (keys.hasMoreElements()) {
                 String key = keys.nextElement();
                 String value = bundle.getString(key);

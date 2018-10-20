@@ -1,7 +1,7 @@
 package utils;
 
 
-import status.Code;
+import status.CodeEnums;
 import output.ResultOutput;
 
 public class ResultOutputUtil {
@@ -16,7 +16,7 @@ public class ResultOutputUtil {
 
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(Code.SUCCESS);
+        resultOutput.setCode(CodeEnums.SUCCESS);
 
         resultOutput.setData(data);
 
@@ -26,7 +26,7 @@ public class ResultOutputUtil {
     public static ResultOutput success() {
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(Code.SUCCESS);
+        resultOutput.setCode(CodeEnums.SUCCESS);
 
         return resultOutput;
     }
@@ -49,7 +49,7 @@ public class ResultOutputUtil {
     public static ResultOutput validateError(Object data) {
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(Code.VALIDATE_ERROR);
+        resultOutput.setCode(CodeEnums.VALIDATE_ERROR);
 
         resultOutput.setData(data);
 
@@ -60,7 +60,7 @@ public class ResultOutputUtil {
     public static ResultOutput lackParamsError() {
 
         ResultOutput resultOutput = new ResultOutput();
-        resultOutput.setCode(Code.PARAMETER_ERROR);
+        resultOutput.setCode(CodeEnums.PARAMETER_ERROR);
 
         return resultOutput;
     }
