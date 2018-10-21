@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3eb5712-9517-4129-95a7-0b80795ef961" name="Default" comment="">
+    <list default="true" id="b3eb5712-9517-4129-95a7-0b80795ef961" name="Default" comment="add jwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/status/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/status/Message.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,11 +41,10 @@
       <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/JwtUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="315">
               <caret line="27" column="29" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#904#919#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,6 +57,7 @@
               <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
               <folding>
                 <element signature="e#183#210#0" expanded="true" />
+                <element signature="e#575#590#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,7 +138,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,8 +185,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,7 +282,8 @@
       <workItem from="1539659841753" duration="634000" />
       <workItem from="1539759170964" duration="3638000" />
       <workItem from="1539831932547" duration="702000" />
-      <workItem from="1539914339803" duration="1034000" />
+      <workItem from="1539914339803" duration="2241000" />
+      <workItem from="1540017180004" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="modify pom">
       <created>1539759253709</created>
@@ -299,11 +299,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539914364760</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add jwt">
+      <created>1539944814116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539944814116</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15191000" />
+    <option name="totallyTimeSpent" value="17018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
@@ -319,10 +326,10 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32935324" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.26965174" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3393035" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14802982" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14962727" />
       <window_info anchor="right" id="Database" order="3" weight="0.32960597" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -541,11 +548,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/ThreadLocalUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/JwtUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="315">
           <caret line="27" column="29" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#904#919#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -556,6 +562,7 @@
           <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
           <folding>
             <element signature="e#183#210#0" expanded="true" />
+            <element signature="e#575#590#0" expanded="true" />
           </folding>
         </state>
       </provider>
