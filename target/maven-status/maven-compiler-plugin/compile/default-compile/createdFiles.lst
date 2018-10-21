@@ -1,5 +1,5 @@
-status/Message.class
+status/CodeEnums.class
+status/CodeMessage.class
 output/ResultOutput.class
-status/Code.class
 utils/JwtUtil.class
 utils/ResultOutputUtil.class
