@@ -29,14 +29,14 @@ public class JwtUtil {
         return result;
     }
 
-    public static String getUserId(String token) {
+    public static Integer getUserId(String token) {
         String userId;
         try {
             userId = getClaims(token).getSubject();
         } catch (Exception e) {
             userId = null;
         }
-        return userId;
+        return Integer.parseInt(userId);
     }
 
     public static String getUserName(String token) {
