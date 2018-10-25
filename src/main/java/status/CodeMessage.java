@@ -33,7 +33,7 @@ public class CodeMessage {
             while (keys.hasMoreElements()) {
                 String key = keys.nextElement();
                 String value = bundle.getString(key);
-                codeMessageMap.put(Integer.parseInt(value),new String(key.getBytes("ISO-8859-1"),"utf-8"));
+                codeMessageMap.put(Integer.parseInt(key),new String(value.getBytes("ISO-8859-1"),"utf-8"));
             }
 
             messageMap.put(language,codeMessageMap);
