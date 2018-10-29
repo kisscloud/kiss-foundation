@@ -9,12 +9,12 @@ import java.util.Map;
 import java.util.UUID;
 
 public class JwtUtil {
-    private static final String SECRET = "Z~9T2*rTgm9W~I>3";
+    private static final String SECRET = "Z~9T2*rTg12m9W~I>3";
     private static final long EXPIRATION =  1000*60*60*24;
 
     public static Map<String,Object> getToken(int userId, String username) {
         String key = UUID.randomUUID().toString();
-        Date expiredDate = computeExpired();
+        Date expiredDate = computeExpired(EXPIRATION);
 
         String token =  Jwts.builder()
                         .setIssuer(username)
@@ -27,6 +27,21 @@ public class JwtUtil {
         result.put("token",token);
         result.put("expiredAt",expiredDate.getTime());
         return result;
+    }
+
+    public static String getToken(int userId, String clientId,Long expired) {
+        String key = UUID.randomUUID().toString();
+        Date expiredDate = computeExpired(expired);
+
+        String token =  Jwts.builder()
+                .setIssuer(clientId)
+                .setSubject(userId + "")
+                .setId(key)
+                .setExpiration(expiredDate)
+                .signWith(SignatureAlgorithm.HS512, SECRET)
+                .compact();
+
+        return token;
     }
 
     public static Integer getUserId(String token) {
@@ -47,6 +62,16 @@ public class JwtUtil {
             username = null;
         }
         return username;
+    }
+
+    public static String getClientId(String token) {
+        String clientId;
+        try {
+            clientId = getClaims(token).getIssuer();
+        } catch (Exception e) {
+            clientId = null;
+        }
+        return clientId;
     }
 
     public static boolean isNotExpired(String token) {
@@ -78,7 +103,7 @@ public class JwtUtil {
         return expired;
     }
 
-    private static Date computeExpired() {
-        return new Date(System.currentTimeMillis() + EXPIRATION);
+    private static Date computeExpired(Long expired) {
+        return new Date(System.currentTimeMillis() + expired);
     }
 }
