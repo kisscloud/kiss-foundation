@@ -1,42 +1,51 @@
 package status;
 
 
+import locale.MessageResource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import utils.ApplicationUtil;
+import utils.ThreadLocalUtil;
+
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
-
 public class CodeMessage {
 
-    private static Map<String,Map<Object,String>> messageMap = new HashMap<String,Map<Object,String>>();
+    @Autowired
+    protected MessageSource messageSource;
 
-    public static String getMessage(String lang,Object code) {
-        return messageMap.get(lang).get(code);
+    public String getMessage(Integer code) {
+
+        String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
+        String message = messageSource.getMessage(String.valueOf(code) , null, new Locale(language));
+
+        try {
+            return formatString(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return message;
+        }
     }
 
-    public CodeMessage() throws UnsupportedEncodingException {
+    public String getEnumsMessage(String key,String option) {
 
-        ResourceBundle langBundle = ResourceBundle.getBundle("language");
-        Enumeration<String> langKeys = langBundle.getKeys();
-        Map<String,String> langMap = new HashMap<String,String>();
+        ThreadLocalUtil.setString(MessageResource.I18N_ATTRIBUTE,"enums");
+        String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
+        String message = messageSource.getMessage(key + option, null, new Locale(language == null ? "zh-CN":language));
 
-        while (langKeys.hasMoreElements()) {
-            String key = langKeys.nextElement();
-            String value = langBundle.getString(key);
-            langMap.put(key,value);
+        try {
+            return formatString(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return message;
         }
+    }
 
-        for (Map.Entry<String,String> entry : langMap.entrySet()) {
-            String language = entry.getValue();
-            ResourceBundle bundle = ResourceBundle.getBundle("i18n/codes",new Locale(language));
-            Enumeration<String> keys = bundle.getKeys();
-            Map<Object,String> codeMessageMap = new HashMap<Object,String>();
-            while (keys.hasMoreElements()) {
-                String key = keys.nextElement();
-                String value = bundle.getString(key);
-                codeMessageMap.put(Integer.parseInt(key),new String(value.getBytes("ISO-8859-1"),"utf-8"));
-            }
+    public String formatString(String message) throws UnsupportedEncodingException {
 
-            messageMap.put(language,codeMessageMap);
-        }
+        String returnMessage = new String(message.getBytes("iso-8859-1"),"utf-8");
+
+        return returnMessage;
     }
 }
