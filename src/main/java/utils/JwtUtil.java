@@ -98,7 +98,7 @@ public class JwtUtil {
             final Claims claims = getClaims(token);
             expired = claims.getExpiration();
         } catch (Exception e) {
-            expired = null;
+            expired = new Date(0);
         }
         return expired;
     }
