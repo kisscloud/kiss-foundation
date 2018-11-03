@@ -2,6 +2,7 @@ package locale;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -36,10 +37,11 @@ public class MessageResource extends ResourceBundleMessageSource {
             }
         }
         //设置父MessageSource
-
         ResourceBundleMessageSource parent = new ResourceBundleMessageSource();
         parent.setBasename(basename);
+        parent.setDefaultEncoding("utf-8");
         this.setParentMessageSource(parent);
+//        this.setDefaultEncoding("gbk");
     }
 
     /**
