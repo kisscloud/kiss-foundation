@@ -43,6 +43,11 @@ public class ThreadLocalUtil {
         map.put(key, value);
     }
 
+    public static void removeMap() {
+
+        threadLocal.remove();
+    }
+
     /**
      * @Title:获取当前语言lang
      * @Description: TODO

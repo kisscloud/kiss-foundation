@@ -1,6 +1,7 @@
 status/CodeEnums.class
 output/ResultOutput.class
 locale/MessageResource.class
+interceptor/MessageResourceInterceptor.class
 utils/JwtUtil.class
 utils/ResultOutputUtil.class
 filter/GuestFilter.class
@@ -11,3 +12,4 @@ status/CodeMessage.class
 utils/GuestUtil.class
 entity/Guest.class
 utils/ThreadLocalUtil.class
+annotation/I18n.class

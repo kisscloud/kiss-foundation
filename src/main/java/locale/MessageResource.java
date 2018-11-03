@@ -32,6 +32,7 @@ public class MessageResource extends ResourceBundleMessageSource {
         if (!StringUtils.isEmpty(baseFolder)) {
             try {
                 this.setBasenames(getAllBaseNames(baseFolder));
+                this.setDefaultEncoding("utf-8");
             } catch (IOException e) {
                 logger.error(e.getMessage());
             }
