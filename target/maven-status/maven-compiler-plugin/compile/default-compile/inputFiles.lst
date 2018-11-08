@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /Users/Gu/kiss/kiss-foundation/src/main/java/utils/JwtUtil.java
 /Users/Gu/kiss/kiss-foundation/src/main/java/output/ResultOutput.java
 /Users/Gu/kiss/kiss-foundation/src/main/java/utils/ThreadLocalUtil.java
@@ -10,21 +9,7 @@
 /Users/Gu/kiss/kiss-foundation/src/main/java/filter/InnerFilter.java
 /Users/Gu/kiss/kiss-foundation/src/main/java/status/CodeMessage.java
 /Users/Gu/kiss/kiss-foundation/src/main/java/filter/InnerFilterChain.java
+/Users/Gu/kiss/kiss-foundation/src/main/java/interceptor/MessageResourceInterceptor.java
 /Users/Gu/kiss/kiss-foundation/src/main/java/entity/Guest.java
+/Users/Gu/kiss/kiss-foundation/src/main/java/annotation/I18n.java
 /Users/Gu/kiss/kiss-foundation/src/main/java/utils/ApplicationUtil.java
-=======
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/status/CodeEnums.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/entity/Guest.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/utils/GuestUtil.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/utils/ApplicationUtil.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/filter/GuestFilter.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/filter/InnerFilter.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/status/CodeMessage.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/output/ResultOutput.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/annotation/I18n.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/filter/InnerFilterChain.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/locale/MessageResource.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/utils/ResultOutputUtil.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/utils/ThreadLocalUtil.java
-/Users/qianrongli/self_workspace/kiss-foundation/src/main/java/utils/JwtUtil.java
->>>>>>> 68543b5e1d86f8b19e7774a5b66be4a0a3e37608

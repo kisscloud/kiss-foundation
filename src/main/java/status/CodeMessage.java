@@ -17,7 +17,7 @@ public class CodeMessage {
     public String getMessage(Integer code) {
 
         String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
-        String message = messageSource.getMessage(String.valueOf(code) , null, new Locale(language));
+        String message = messageSource.getMessage(String.valueOf(code) , null, new Locale(language==null ? "zh-CN":language));
 
         return message;
     }
