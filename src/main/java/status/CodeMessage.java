@@ -7,7 +7,6 @@ import org.springframework.context.MessageSource;
 import utils.ApplicationUtil;
 import utils.ThreadLocalUtil;
 
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 public class CodeMessage {
@@ -20,12 +19,7 @@ public class CodeMessage {
         String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
         String message = messageSource.getMessage(String.valueOf(code) , null, new Locale(language));
 
-        try {
-            return formatString(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return message;
-        }
+        return message;
     }
 
     public String getEnumsMessage(String key,String option) {
@@ -34,18 +28,6 @@ public class CodeMessage {
         String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
         String message = messageSource.getMessage(key + option, null, new Locale(language == null ? "zh-CN":language));
 
-        try {
-            return formatString(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return message;
-        }
-    }
-
-    public String formatString(String message) throws UnsupportedEncodingException {
-
-        String returnMessage = new String(message.getBytes("iso-8859-1"),"utf-8");
-
-        return returnMessage;
+        return message;
     }
 }
