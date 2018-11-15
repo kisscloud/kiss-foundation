@@ -1,5 +1,6 @@
 status/CodeEnums.class
 output/ResultOutput.class
+utils/BeanCopyUtil.class
 locale/MessageResource.class
 interceptor/MessageResourceInterceptor.class
 utils/JwtUtil.class
