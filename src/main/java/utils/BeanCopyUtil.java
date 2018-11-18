@@ -17,15 +17,15 @@ public class BeanCopyUtil {
         defaultFieldNames.add("updatedAt");
     }
 
-    public static Object copy(Object source, Class<?> targetClass) {
+    public static <T> T copy(Object source, Class<T> targetClass) {
 
         return copy(source, targetClass, null);
     }
 
-    public static Object copy(Object source, Class<?> targetClass, List<String> fieldNames) {
+    public static <T> T copy(Object source, Class<T> targetClass, List<String> fieldNames) {
 
         try {
-            Object target = targetClass.newInstance();
+            T target = targetClass.newInstance();
 
             if (source != null) {
                 BeanUtils.copyProperties(source, target);
@@ -40,20 +40,20 @@ public class BeanCopyUtil {
         }
     }
 
-    public static List<Object> copyList(List<?> source, Class<?> targetClass) {
+    public static <T> List<T> copyList(List<?> source, Class<T> targetClass) {
 
         return copyList(source, targetClass, null);
     }
 
-    public static List<Object> copyList(List<?> source, Class<?> targetClass, List<String> fieldNames) {
+    public static <T> List<T> copyList(List<?> source, Class<T> targetClass, List<String> fieldNames) {
 
-        List<Object> targetList = new ArrayList<>();
+        List<T> targetList = new ArrayList<T>();
 
         try {
 
             if (source != null && source.size() != 0) {
                 for (Object object : source) {
-                    Object target = targetClass.newInstance();
+                    T target = targetClass.newInstance();
                     BeanUtils.copyProperties(object, target);
                     formatDateField(object, target, fieldNames);
                     targetList.add(target);
