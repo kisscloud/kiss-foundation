@@ -17,9 +17,11 @@ public class GuestFilter implements InnerFilter{
 
         if (!StringUtils.isEmpty(token)) {
             Integer accountId = JwtUtil.getUserId(token);
-            String name = JwtUtil.getUserName(token);
+            String userName = JwtUtil.getUserName(token);
+            String name = JwtUtil.getName(token);
             Guest operator = new Guest();
             operator.setId(accountId);
+            operator.setUsername(userName);
             operator.setName(name);
             GuestUtil.setGuest(operator);
         }

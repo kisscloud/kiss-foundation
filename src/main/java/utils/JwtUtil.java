@@ -12,13 +12,14 @@ public class JwtUtil {
     private static final String SECRET = "Z~9T2*rTg12m9W~I>3";
     private static final long EXPIRATION =  1000*60*60*24;
 
-    public static Map<String,Object> getToken(int userId, String username) {
+    public static Map<String,Object> getToken(int userId, String username,String name) {
         String key = UUID.randomUUID().toString();
         Date expiredDate = computeExpired(EXPIRATION);
 
         String token =  Jwts.builder()
                         .setIssuer(username)
                         .setSubject(userId + "")
+                        .setAudience(name)
                         .setId(key)
                         .setExpiration(expiredDate)
                         .signWith(SignatureAlgorithm.HS512, SECRET)
@@ -36,6 +37,22 @@ public class JwtUtil {
         String token =  Jwts.builder()
                 .setIssuer(clientId)
                 .setSubject(userId + "")
+                .setId(key)
+                .setExpiration(expiredDate)
+                .signWith(SignatureAlgorithm.HS512, SECRET)
+                .compact();
+
+        return token;
+    }
+
+    public static String getToken(int userId, String username,String name,Long expired) {
+        String key = UUID.randomUUID().toString();
+        Date expiredDate = computeExpired(expired);
+
+        String token =  Jwts.builder()
+                .setIssuer(username)
+                .setSubject(userId + "")
+                .setAudience(name)
                 .setId(key)
                 .setExpiration(expiredDate)
                 .signWith(SignatureAlgorithm.HS512, SECRET)
@@ -62,6 +79,16 @@ public class JwtUtil {
             username = null;
         }
         return username;
+    }
+
+    public static String getName(String token) {
+        String name;
+        try {
+            name = getClaims(token).getAudience();
+        } catch (Exception e) {
+            name = null;
+        }
+        return name;
     }
 
     public static String getClientId(String token) {

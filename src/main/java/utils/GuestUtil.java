@@ -30,6 +30,22 @@ public class GuestUtil {
     }
 
     /**
+     * 获取访客用户名
+     *
+     * @return String
+     */
+    public static String getUsername() {
+
+        Guest operator = ThreadLocalUtil.getGuest();
+
+        if (operator == null) {
+            return null;
+        }
+
+        return operator.getUsername();
+    }
+
+    /**
      * 获取访客姓名
      *
      * @return String
@@ -71,7 +87,7 @@ public class GuestUtil {
 
         if (userMessageOb != null) {
             Guest guest = new Guest();
-            guest.setName(userMessageOb.getString("GateUsername"));
+            guest.setUsername(userMessageOb.getString("GateUsername"));
             guest.setId(userMessageOb.getInteger("GateUserId"));
             ThreadLocalUtil.setGuest(guest);
         }

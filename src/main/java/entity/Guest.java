@@ -11,6 +11,11 @@ public class Guest {
     private Integer id;
 
     /**
+     * 访客用户名
+     */
+    private String username;
+
+    /**
      * 访客名称
      */
     private String name;
