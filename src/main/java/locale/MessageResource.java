@@ -11,10 +11,13 @@ import utils.ThreadLocalUtil;
 import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.jar.JarFile;
+import java.util.stream.Collectors;
+import java.util.zip.ZipEntry;
 
 public class MessageResource extends ResourceBundleMessageSource {
 
@@ -53,15 +56,49 @@ public class MessageResource extends ResourceBundleMessageSource {
      * @throws IOException
      */
     private String[] getAllBaseNames(String folderName) throws IOException {
-        Resource resource = new ClassPathResource(folderName);
-        File file = resource.getFile();
-        List<String> baseNames = new ArrayList<>();
-        if (file.exists() && file.isDirectory()) {
-            this.getAllFile(baseNames, file, "");
-        } else {
-            logger.error("指定的baseFile不存在或者不是文件夹");
+        URL url = Thread.currentThread().getContextClassLoader()
+                .getResource(folderName);
+
+        if (null == url) {
+            throw new RuntimeException("无法获取资源文件路径");
         }
-        return baseNames.toArray(new String[baseNames.size()]);
+
+        List<String> baseNames = new ArrayList<>();
+        if (url.getProtocol().equalsIgnoreCase("file")) {
+            // 文件夹形式,用File获取资源路径
+            File file = new File(url.getFile());
+            if (file.exists() && file.isDirectory()) {
+                baseNames = Files.walk(file.toPath())
+                        .filter(path -> path.toFile().isFile())
+                        .map(Path::toString)
+                        .map(path -> path.substring(path.indexOf(folderName)))
+                        .map(this::getI18FileName)
+                        .distinct()
+                        .collect(Collectors.toList());
+            } else {
+                logger.error("指定的baseFile不存在或者不是文件夹");
+            }
+        } else if (url.getProtocol().equalsIgnoreCase("jar")) {
+            // jar包形式，用JarEntry获取资源路径
+            String jarPath = url.getFile().substring(url.getFile().indexOf(":") + 1, url.getFile().indexOf("!"));
+            JarFile jarFile = new JarFile(new File(jarPath));
+            List<String> baseJars = jarFile.stream()
+                    .map(ZipEntry::toString)
+                    .filter(jar -> jar.endsWith(folderName + "/")).collect(Collectors.toList());
+            if (baseJars.isEmpty()) {
+                logger.info("不存在" + folderName + "资源文件夹");
+                return new String[0];
+            }
+
+            baseNames = jarFile.stream().map(ZipEntry::toString)
+                    .filter(jar -> baseJars.stream().anyMatch(jar::startsWith))
+                    .filter(jar -> jar.endsWith(".properties"))
+                    .map(jar -> jar.substring(jar.indexOf(folderName)))
+                    .map(this::getI18FileName)
+                    .distinct()
+                    .collect(Collectors.toList());
+        }
+        return baseNames.toArray(new String[0]);
     }
 
     /**
@@ -99,7 +136,7 @@ public class MessageResource extends ResourceBundleMessageSource {
                 filename = filename.substring(0, index);
             }
         }
-        return filename;
+        return filename.replace("\\", "/");
     }
 
     @Override
@@ -113,7 +150,14 @@ public class MessageResource extends ResourceBundleMessageSource {
                     .findFirst().orElse(null);
             if (!StringUtils.isEmpty(basename)) {
                 //得到指定的国际化文件资源
+                System.out.println(locale);
                 ResourceBundle bundle = getResourceBundle(basename, locale);
+                Enumeration<String> enumeration = bundle.getKeys();
+
+                while (enumeration.hasMoreElements()) {
+                    System.out.println(enumeration.nextElement());
+                }
+
                 if (bundle != null) {
                     return getStringOrNull(bundle, code);
                 }
