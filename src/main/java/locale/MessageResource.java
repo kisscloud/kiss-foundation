@@ -150,13 +150,7 @@ public class MessageResource extends ResourceBundleMessageSource {
                     .findFirst().orElse(null);
             if (!StringUtils.isEmpty(basename)) {
                 //得到指定的国际化文件资源
-                System.out.println(locale);
                 ResourceBundle bundle = getResourceBundle(basename, locale);
-                Enumeration<String> enumeration = bundle.getKeys();
-
-                while (enumeration.hasMoreElements()) {
-                    System.out.println(enumeration.nextElement());
-                }
 
                 if (bundle != null) {
                     return getStringOrNull(bundle, code);
