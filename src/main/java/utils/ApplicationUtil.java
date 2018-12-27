@@ -19,7 +19,7 @@ public class ApplicationUtil implements ApplicationContextAware {
         this.applicationContext = applicationContext;
     }
 
-    public static Object getBean (Class<?> name) {
+    public static <T> T getBean (Class<T> name) {
 
         return applicationContext.getBean(name);
     }
