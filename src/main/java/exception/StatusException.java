@@ -1,8 +1,5 @@
 package exception;
 
-import lombok.Data;
-
-@Data
 public class StatusException extends RuntimeException {
 
     private Integer code;
@@ -15,9 +12,27 @@ public class StatusException extends RuntimeException {
         this.code = code;
     }
 
+    public StatusException(Integer code, String message, Object detail) {
+        this.code = code;
+        this.message = message;
+        this.detail = detail;
+    }
+
     public StatusException(Integer code, Object detail) {
         this.code = code;
         this.detail = detail;
     }
 
+    public Integer getCode() {
+        return code;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public Object getDetail() {
+        return detail;
+    }
 }
