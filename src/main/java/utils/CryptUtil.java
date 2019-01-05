@@ -1,7 +1,10 @@
 package utils;
 
+import org.springframework.security.crypto.codec.Utf8;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
@@ -93,5 +96,27 @@ public class CryptUtil {
         }
 
         return hash;
+    }
+
+    public static byte[] md5Bytes(String source) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(source.getBytes());
+        return new BigInteger(1, md.digest()).toByteArray();
+    }
+
+    public static String md5(String source) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(source.getBytes());
+        return new BigInteger(1, md.digest()).toString(16);
     }
 }
