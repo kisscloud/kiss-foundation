@@ -8,6 +8,9 @@ public class StatusException extends RuntimeException {
 
     private Object detail;
 
+    public StatusException() {
+    }
+
     public StatusException(Integer code) {
         this.code = code;
     }
