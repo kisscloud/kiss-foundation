@@ -1,20 +1,17 @@
-package status;
-
+package utils;
 
 import locale.MessageResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import utils.ApplicationUtil;
-import utils.ThreadLocalUtil;
 
 import java.util.*;
 
-public class CodeMessage {
+public class LangUtil {
 
     @Autowired
     protected MessageSource messageSource;
 
-    public String getMessage(Integer code) {
+    public String getCodeMessage(Integer code) {
 
         String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
         String message = messageSource.getMessage(String.valueOf(code) , null, new Locale(language==null ? "zh_cn":language.replace("-","_")));
@@ -30,4 +27,7 @@ public class CodeMessage {
 
         return message;
     }
+
+
+
 }
