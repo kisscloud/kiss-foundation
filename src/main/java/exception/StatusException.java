@@ -23,6 +23,18 @@ public class StatusException extends RuntimeException {
         this.detail = detail;
     }
 
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setDetail(Object detail) {
+        this.detail = detail;
+    }
+
     public Integer getCode() {
         return code;
     }
