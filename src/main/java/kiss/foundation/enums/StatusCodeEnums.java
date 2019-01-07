@@ -1,4 +1,4 @@
-package enums;
+package kiss.foundation.enums;
 
 public class StatusCodeEnums {
     public static final Integer SERVICE_ERROR = 503;

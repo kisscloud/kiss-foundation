@@ -1,4 +1,4 @@
-package utils;
+package kiss.foundation.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

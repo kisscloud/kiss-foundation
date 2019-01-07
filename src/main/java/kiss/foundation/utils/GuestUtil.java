@@ -1,7 +1,7 @@
-package utils;
+package kiss.foundation.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import entity.Guest;
+import kiss.foundation.entity.Guest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.ByteArrayOutputStream;

@@ -1,11 +1,11 @@
-package interceptor;
+package kiss.foundation.interceptor;
 
-import annotation.I18n;
-import locale.MessageResource;
+import kiss.foundation.annotation.I18n;
+import kiss.foundation.locale.MessageResource;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import utils.ThreadLocalUtil;
+import kiss.foundation.utils.ThreadLocalUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
