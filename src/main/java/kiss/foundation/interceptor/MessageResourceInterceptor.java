@@ -1,7 +1,7 @@
 package kiss.foundation.interceptor;
 
 import kiss.foundation.annotation.I18n;
-import kiss.foundation.locale.MessageResource;
+import kiss.foundation.locale.BaseMessageResource;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +15,7 @@ public class MessageResourceInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest req, HttpServletResponse rep, Object handler, ModelAndView modelAndView) {
 
-        if (null != req.getAttribute(MessageResource.I18N_ATTRIBUTE)) {
+        if (null != req.getAttribute(BaseMessageResource.I18N_ATTRIBUTE)) {
             return;
         }
 
@@ -32,14 +32,14 @@ public class MessageResourceInterceptor implements HandlerInterceptor {
         I18n i18nMethod = method.getMethodAnnotation(I18n.class);
 
         if (null != i18nMethod) {
-            ThreadLocalUtil.setString(MessageResource.I18N_ATTRIBUTE, i18nMethod.value());
+            ThreadLocalUtil.setString(BaseMessageResource.I18N_ATTRIBUTE, i18nMethod.value());
             return;
         }
 
         I18n i18nController = method.getBeanType().getAnnotation(I18n.class);
 
         if (null != i18nController) {
-            ThreadLocalUtil.setString(MessageResource.I18N_ATTRIBUTE, i18nController.value());
+            ThreadLocalUtil.setString(BaseMessageResource.I18N_ATTRIBUTE, i18nController.value());
             return;
         }
 
@@ -56,7 +56,7 @@ public class MessageResourceInterceptor implements HandlerInterceptor {
             controller = controller.substring(0, index);
         }
 
-        ThreadLocalUtil.setString(MessageResource.I18N_ATTRIBUTE, controller);
+        ThreadLocalUtil.setString(BaseMessageResource.I18N_ATTRIBUTE, controller);
     }
 
     @Override

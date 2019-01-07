@@ -16,7 +16,7 @@ import java.util.jar.JarFile;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 
-public class MessageResource extends ResourceBundleMessageSource {
+public class BaseMessageResource extends ResourceBundleMessageSource {
 
     @Value("${spring.messages.baseFolder:i18n}")
     public String baseFolder;

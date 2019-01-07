@@ -1,12 +1,12 @@
 package kiss.foundation.utils;
 
-import kiss.foundation.locale.MessageResource;
+import kiss.foundation.locale.BaseMessageResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 
 import java.util.*;
 
-public class LangBaseUtil {
+public class BaseLangUtil {
 
     @Autowired
     protected MessageSource messageSource;
@@ -21,7 +21,7 @@ public class LangBaseUtil {
 
     public String getEnumsMessage(String key,String option) {
 
-        ThreadLocalUtil.setString(MessageResource.I18N_ATTRIBUTE, "kiss/foundation/enums");
+        ThreadLocalUtil.setString(BaseMessageResource.I18N_ATTRIBUTE, "kiss/foundation/enums");
         String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
         String message = messageSource.getMessage(key + option, null, new Locale(language == null ? "zh_cn":language.replace("-","_")));
 
