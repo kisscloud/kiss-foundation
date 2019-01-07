@@ -1,4 +1,4 @@
-package kiss.foundation.filter;
+package com.kiss.foundation.filter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

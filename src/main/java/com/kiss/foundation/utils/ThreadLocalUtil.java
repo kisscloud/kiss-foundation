@@ -1,6 +1,6 @@
-package kiss.foundation.utils;
+package com.kiss.foundation.utils;
 
-import kiss.foundation.entity.Guest;
+import com.kiss.foundation.entity.Guest;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;

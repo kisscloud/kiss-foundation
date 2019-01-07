@@ -1,4 +1,4 @@
-package kiss.foundation.entity;
+package com.kiss.foundation.entity;
 
 import lombok.Data;
 

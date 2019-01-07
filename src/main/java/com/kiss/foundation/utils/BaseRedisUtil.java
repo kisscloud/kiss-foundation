@@ -1,4 +1,4 @@
-package kiss.foundation.utils;
+package com.kiss.foundation.utils;
 
 import org.springframework.data.redis.core.*;
 import javax.annotation.Resource;
@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
-public class RedisUtil {
+public class BaseRedisUtil {
     @Resource
     private RedisTemplate redisTemplate;
 

@@ -1,4 +1,4 @@
-package kiss.foundation.exception;
+package com.kiss.foundation.exception;
 
 public class StatusException extends RuntimeException {
 

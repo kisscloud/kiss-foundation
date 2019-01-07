@@ -1,9 +1,9 @@
-package kiss.foundation.locale;
+package com.kiss.foundation.locale;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import kiss.foundation.utils.ThreadLocalUtil;
+import com.kiss.foundation.utils.ThreadLocalUtil;
 
 import javax.annotation.PostConstruct;
 import java.io.File;

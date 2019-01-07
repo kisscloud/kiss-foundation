@@ -1,4 +1,4 @@
-package kiss.foundation.utils;
+package com.kiss.foundation.utils;
 
 import org.springframework.beans.BeanUtils;
 

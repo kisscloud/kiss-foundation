@@ -1,4 +1,4 @@
-package kiss.foundation.annotation;
+package com.kiss.foundation.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package kiss.foundation.status;
+package com.kiss.foundation.status;
 
 public class BaseStatusCode {
     public static final Integer SERVICE_ERROR = 503;
