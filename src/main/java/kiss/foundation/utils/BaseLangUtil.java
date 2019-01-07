@@ -21,7 +21,7 @@ public class BaseLangUtil {
 
     public String getEnumsMessage(String key,String option) {
 
-        ThreadLocalUtil.setString(BaseMessageResource.I18N_ATTRIBUTE, "kiss/foundation/enums");
+        ThreadLocalUtil.setString(BaseMessageResource.I18N_ATTRIBUTE, "kiss/foundation/status");
         String language = ApplicationUtil.getHttpServletRequest().getHeader("X-LANGUAGE");
         String message = messageSource.getMessage(key + option, null, new Locale(language == null ? "zh_cn":language.replace("-","_")));
 

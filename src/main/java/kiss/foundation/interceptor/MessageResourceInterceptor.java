@@ -10,6 +10,7 @@ import kiss.foundation.utils.ThreadLocalUtil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// @TODO 判断是否加 base
 public class MessageResourceInterceptor implements HandlerInterceptor {
 
     @Override
