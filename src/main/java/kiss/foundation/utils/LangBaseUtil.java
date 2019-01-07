@@ -6,7 +6,7 @@ import org.springframework.context.MessageSource;
 
 import java.util.*;
 
-public class LangUtil {
+public class LangBaseUtil {
 
     @Autowired
     protected MessageSource messageSource;
